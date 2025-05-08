@@ -7,7 +7,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install poetry \
+RUN pip install poetry
 RUN poetry config virtualenvs.create false
 COPY pyproject.toml poetry.lock
 RUN poetry install --no-root
