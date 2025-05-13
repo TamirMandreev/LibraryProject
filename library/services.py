@@ -1,5 +1,6 @@
 from .models import Book, Review
 
+
 class BookService:
 
     @staticmethod
