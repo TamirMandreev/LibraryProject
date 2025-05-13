@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+import sys
+
 from django.conf.global_settings import EMAIL_USE_TLS
 from dotenv import load_dotenv
 
@@ -154,6 +156,6 @@ LOGIN_URL = 'users:login'
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://redis:6379/1'
+        'LOCATION': 'redis://localhost:6379/1'
     }
 }

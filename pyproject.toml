@@ -15,8 +15,17 @@ pillow = "^11.1.0"
 redis = "^5.2.1"
 gunicorn = "^23.0.0"
 django-redis = "^5.4.0"
+flake8 = "^7.2.0"
+pytest = "^8.3.5"
+pytest-django = "^4.11.1"
+pytest-cov = "^6.1.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = 'config.settings'
+python_files = ['tests.py']
+addopts = '-p no:django_tests'
