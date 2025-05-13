@@ -10,9 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-import sys
-
-from django.conf.global_settings import EMAIL_USE_TLS
 from dotenv import load_dotenv
 
 import os
