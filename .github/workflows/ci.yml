@@ -75,6 +75,11 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+          sudo usermod -aG docker $USER || true
+          sudo systemctl start docker || true
+          sudo chown root:docker /var/run/docker.sock || true
+          sudo chmod 660 /var/run/docker.sock || true
+          
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/library_project:${{ github.sha }}
           docker stop library_project || true
           docker rm library_project || true
